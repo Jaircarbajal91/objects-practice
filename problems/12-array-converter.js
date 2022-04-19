@@ -12,7 +12,14 @@ console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {app
 ***********************************************************************/
 
 function arrayConverter(array) {
-  // your code here
+  return array.reduce((obj, string) => {
+    if (string in obj) {
+      obj[string]++
+    } else {
+      obj[string] = 1;
+    }
+    return obj;
+  }, {})
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
